@@ -10,7 +10,7 @@ title: Jim's Technical Blog
 email: jim.buzz@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   My technical blog where I record my various endeavours both electronic and computing. This is mainly to allow me to have a record of  my technical successes and otherwise of my interests. These are Ham Radio , Linux , embedded systems , electronic repair and general electronics.
-baseurl: "/blog" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://parkyjimbo.github.io" # the base hostname & protocol for your site
 twitter_username: parkyjimbo
 github_username:  parkyjimbo
