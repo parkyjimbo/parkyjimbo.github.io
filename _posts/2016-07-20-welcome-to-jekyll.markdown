@@ -1,12 +1,11 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "Raspberry PI NTP Server"
 date:   2016-07-20 12:04:18 +0100
 categories: jekyll update
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+I have set up a couple of NTP Servers on Raspberry Pi's they both use GPS PPS modules to keep time set to within ~uS. I am also logging the offsets to see how accurately time is being kept. The system used for this is MRTG Multi Router Traffic Grapher http://oss.oetiker.ch/mrtg/
 
 Jekyll also offers powerful support for code snippets:
 
