@@ -1,0 +1,12 @@
+---
+layout: post
+title: SSH Connection Problems
+date: '2010-06-03T15:16:00.003+01:00'
+author: jimbuzz
+tags: 
+modified_time: '2010-06-03T15:18:13.696+01:00'
+blogger_id: tag:blogger.com,1999:blog-4676883399643590331.post-8959449411837724509
+blogger_orig_url: http://parkyjimbo.blogspot.com/2010/06/ssh-connection-problems.html
+---
+
+<b>Ssh-agent Problem</b><br /><br />When I attempted to use the command <i>'ssh-agent'</i>  then the command <i>'ssh-add'</i>  to enter my rsa passphrase and allow me to login to a host without typing my passphrase in all the time. The error I got after entering <i>'ssh-add'</i> was <i>'Could not open a connection to your authentication agent'</i>.<br />The solution was to enter the command <i>'exec ssh-agent bash'</i> the command 'ssh-add' then the passphrase. It worked after this not sure why, it used to work before, could have been an upgrade in Ubuntu 9.10.

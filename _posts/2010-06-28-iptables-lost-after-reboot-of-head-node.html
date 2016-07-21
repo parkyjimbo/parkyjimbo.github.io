@@ -1,0 +1,12 @@
+---
+layout: post
+title: IPTables Lost After Reboot of Head Node
+date: '2010-06-28T10:14:00.002+01:00'
+author: jimbuzz
+tags: 
+modified_time: '2010-06-28T10:15:00.327+01:00'
+blogger_id: tag:blogger.com,1999:blog-4676883399643590331.post-1645271022065370493
+blogger_orig_url: http://parkyjimbo.blogspot.com/2010/06/iptables-lost-after-reboot-of-head-node.html
+---
+
+<b>IPTables Lost After Reboot of Head Node</b><br /><br />The iptables were lost every time the machine was rebooted so I found I needed to save the iptabels to a file /etc/iptables.rules.<br />Use the following command to use NAT for the compute nodes <i>sudo iptables -t nat -A POSTROUTING -o eth1 -j MASQUERADE</i><br />Then in Ubuntu become <i>su</i> by using <i>sudo su</i> then use the command <i>iptables-save > /etc/iptables.rules</i>

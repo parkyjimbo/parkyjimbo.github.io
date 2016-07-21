@@ -1,0 +1,12 @@
+---
+layout: post
+title: NFS not working on some nodes
+date: '2010-07-05T16:14:00.001+01:00'
+author: jimbuzz
+tags: 
+modified_time: '2010-07-05T16:15:52.266+01:00'
+blogger_id: tag:blogger.com,1999:blog-4676883399643590331.post-8574898582506183095
+blogger_orig_url: http://parkyjimbo.blogspot.com/2010/07/nfs-not-working-on-some-nodes.html
+---
+
+<b>NFS not working</b><br /><br />The nodes were not working and issuing the command <br />showed that there was an NFS mounting problem<br /><i>jimp@compute-2:~$ rpcinfo -p<br />program vers proto   port<br />100000    2   tcp    111  portmapper<br />100000    2   udp    111  portmapper<br />100024    1   udp  52121  status<br />100024    1   tcp  59769  status</i><br /><br />The /etc/hosts file was changed to match the other nodes<br />the rpcinfo command now gives the following.<br /><br /><i>jimp@compute-5:~$ rpcinfo -p hadoop<br />program vers proto   port<br />100000    2   tcp    111  portmapper<br />100000    2   udp    111  portmapper<br />100024    1   udp  56797  status<br />100024    1   tcp  54606  status<br />100021    1   udp  53628  nlockmgr<br />100021    3   udp  53628  nlockmgr<br />100021    4   udp  53628  nlockmgr<br />100021    1   tcp  53694  nlockmgr<br />100021    3   tcp  53694  nlockmgr<br />100021    4   tcp  53694  nlockmgr<br />100003    2   udp   2049  nfs<br />100003    3   udp   2049  nfs<br />100003    4   udp   2049  nfs<br />100003    2   tcp   2049  nfs<br />100003    3   tcp   2049  nfs<br />100003    4   tcp   2049  nfs<br />100005    1   udp  40126  mountd<br />100005    1   tcp  37582  mountd<br />100005    2   udp  40126  mountd<br />100005    2   tcp  37582  mountd<br />100005    3   udp  40126  mountd<br />100005    3   tcp  37582  mountd<br /><br /><br /><br /></i>

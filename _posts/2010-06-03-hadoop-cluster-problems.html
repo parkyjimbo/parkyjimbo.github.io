@@ -1,0 +1,12 @@
+---
+layout: post
+title: Hadoop Cluster Problems
+date: '2010-06-03T15:02:00.001+01:00'
+author: jimbuzz
+tags: 
+modified_time: '2010-06-03T15:18:48.512+01:00'
+blogger_id: tag:blogger.com,1999:blog-4676883399643590331.post-6440949057019663325
+blogger_orig_url: http://parkyjimbo.blogspot.com/2010/06/hadoop-cluster-problems.html
+---
+
+<b>Network Instability</b><br /><br />The cluster had intermittent network availability, sometimes it would accept ssh connections only sometimes. The connections only seemed to last a period of 10 minutes before they were disconnected. <br />It was initailly thought that it may have been something to do with the dhcp server but it turned out that this was not the cause.<br />One of the symptoms was during a ping to the DNS server one would get a few returns then a few Destination Host Unreachable errors. <br />It was eventually traced to having two gateways setup in the <i>'/etc/network/interfaces'</i> one on the public network and one on the private network, when this was corrected to having only one public gateway this fixed the problem.

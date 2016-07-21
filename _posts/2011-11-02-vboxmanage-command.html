@@ -1,0 +1,12 @@
+---
+layout: post
+title: Vboxmanage Command
+date: '2011-11-02T11:50:00.001Z'
+author: jimbuzz
+tags: 
+modified_time: '2011-11-02T14:51:56.405Z'
+blogger_id: tag:blogger.com,1999:blog-4676883399643590331.post-4415546637184399978
+blogger_orig_url: http://parkyjimbo.blogspot.com/2011/11/vboxmanage-command.html
+---
+
+<b>The Vboxmanage Command</b><br />I had difficulty trying to increase the size of a virtual hard drive on one of my Virtual machines, but it turned out that the command below was all that was needed to turn a 15GB HD into a 20GB HD easy :). <br /><br /><i>vboxmanage modifyhd ~/.VirtualBox/VDI/Windows\ XP.vdi --resize 20000</i><br /><br />Footnote: I forgot to use a partitioning program to resize the partition and use the whole disk. I booted a Gparted Live CD in the VM and used it to grow the partition to its full size.

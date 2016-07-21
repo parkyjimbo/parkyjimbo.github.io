@@ -1,0 +1,12 @@
+---
+layout: post
+title: Rocks Cluster iptables
+date: '2010-07-29T15:05:00.000+01:00'
+author: jimbuzz
+tags: 
+modified_time: '2010-07-29T15:05:28.804+01:00'
+blogger_id: tag:blogger.com,1999:blog-4676883399643590331.post-2820949073729760342
+blogger_orig_url: http://parkyjimbo.blogspot.com/2010/07/rocks-cluster-iptables.html
+---
+
+I needed to modify the iptables to allow connections on some extra tcp ports.<br />I edited the /etc/sysconfig/iptables file using vim. The extra lines added are shown below:-<br /><br /># http and https is allowed for all nodes on the public subnet<br />-A INPUT -m state --state NEW -p tcp --dport  9618 -j ACCEPT<br />-A INPUT -m state --state NEW -p tcp --dport 9614 -j ACCEPT<br /><br />The iptables service was restarted using the command /sbin/service iptables restart.

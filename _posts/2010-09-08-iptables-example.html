@@ -1,0 +1,12 @@
+---
+layout: post
+title: IPTables Example
+date: '2010-09-08T12:31:00.000+01:00'
+author: jimbuzz
+tags: 
+modified_time: '2010-09-08T12:31:18.471+01:00'
+blogger_id: tag:blogger.com,1999:blog-4676883399643590331.post-3708352962708527241
+blogger_orig_url: http://parkyjimbo.blogspot.com/2010/09/iptables-example.html
+---
+
+<b>Head Node IPTables example to open port 1099 and save the rules.</b><br /><br /><b>Add rule</b><br /><i>iptables -A INPUT -p tcp --dport 1099 -j ACCEPT</i><br /><br /><br /><b>Add rule</b><br /><i>iptables -A OUTPUT -p tcp --dport 1099 -j ACCEPT</i><br /><br /><br /><b>Save Rules in the event of reboot</b><br /><i>/sbin/service iptables save</i>

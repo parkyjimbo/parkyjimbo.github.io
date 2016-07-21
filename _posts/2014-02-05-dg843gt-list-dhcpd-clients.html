@@ -1,0 +1,12 @@
+---
+layout: post
+title: 'DG843GT List dhcpd Clients '
+date: '2014-02-05T22:03:00.001Z'
+author: jimbuzz
+tags: 
+modified_time: '2014-02-06T16:51:01.960Z'
+blogger_id: tag:blogger.com,1999:blog-4676883399643590331.post-7942325496768784971
+blogger_orig_url: http://parkyjimbo.blogspot.com/2014/02/dg843gt-list-dhcpd-clients.html
+---
+
+I wanted a way of listing connected devices that have been served an IP Address using the command line on my <a href="http://www.netgear.co.uk/home/products/wired-routers-and-modems/wired-routers/DG834.aspx#" target="_blank">DG843GT</a> ADSL2+ router with <a href="http://www.dgteam-mirror.talktalk.net/Home.html" target="_blank">DGTeam Firmware</a>. This firmware allows ssh login and the ability to change the <a href="http://parkyjimbo.blogspot.co.uk/2012/11/improving-myadsl2-connection-speed.html" target="_blank">noise margin</a> amongst other things.<br /><br />I began by looking at the link for attached devices on the admin webpage of the router. This URL <i>http://192.168.1.1/setup.cgi?todo=nbtscan&amp;next_file=devices.htm</i> was examined and the command nbtscan was noticed.<br /><br />This was tried on the command-line but it didn't seem to do anything , <i>nbtscan --help</i> didn't help either.<br /><br />I thought it must be something to do with arguments so I tried <i>nbtscan 192.168.1.1</i> (my routers IP Address) this listed the attached devices so it's a result.<br /><br />I haven't written a script using expect to get and extract this info automatically yet but it's on my todo list.<br /><br />Example of the command and its output xx added to anonymise my MAC addresses<br />&nbsp;<i># nbtscan 192.168.1.1</i><br /><i>192.168.1.3;UNKNOWN;00:xx:83:2D:xx:BA</i><br /><i>192.168.1.10;TORE;00:1F:xx:C8:xx:B5</i><br /><i>192.168.1.12;UNKNOWN;00:1B:xx:07:xx:A3</i><br /><i>192.168.1.13;DEB;D6:56:xx:FE:xx:57</i><br /><i>192.168.1.22;DAD;00:30:xx:46:xx:2E</i>

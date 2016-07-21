@@ -1,0 +1,12 @@
+---
+layout: post
+title: 'Linux Tinyos example for patching a header file '
+date: '2014-02-04T12:07:00.002Z'
+author: jimbuzz
+tags: 
+modified_time: '2014-02-18T10:43:41.611Z'
+blogger_id: tag:blogger.com,1999:blog-4676883399643590331.post-8646448944731009106
+blogger_orig_url: http://parkyjimbo.blogspot.com/2014/02/linux-tinyos-example-for-patching.html
+---
+
+&nbsp;I was having problems making a simple program for <a href="http://tinyos.stanford.edu/tinyos-wiki/index.php/Main_Page" target="_blank">TinyOS</a> using the command :-<br /><br /><i>make micaz</i><br /><br />The micaz is the target device and can be other devices like iris , telos &amp; tmote etc. <br /><br />The error I got was:-&nbsp; <br /><br /><i>error: variable ‘McuSleepC__atm128PowerBits’ must be const in order  to be put into read-only section by means of ‘__attribute__((progmem))’</i><br /><br />From reading around the issue is documented <a href="http://code.google.com/p/tinyos-main/issues/detail?id=136" target="_blank">here.</a><br /><br />The patch is downloaded to the ~/tinyos-main/ directory and it patches the <i>atm128const.h</i> file to prevent the error messages.<br /><br />The patch is applied using the following command:-<br /><br /><i>patch -p1&nbsp; &lt; tinyos-atm128-const-fix.patch</i><br /><br />

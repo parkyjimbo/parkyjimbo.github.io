@@ -1,0 +1,12 @@
+---
+layout: post
+title: Rocks Cluster Compute nodes Ask for Password
+date: '2012-02-13T15:54:00.000Z'
+author: jimbuzz
+tags: 
+modified_time: '2012-02-20T13:34:37.284Z'
+blogger_id: tag:blogger.com,1999:blog-4676883399643590331.post-4573964900246033958
+blogger_orig_url: http://parkyjimbo.blogspot.com/2012/02/rocks-cluster-compute-nodes-ask-for.html
+---
+
+After installing the compute nodes on a new Rocks Cluster it was found that a few nodes kept asking for SSH password. These should have been passwordless SSH and it was working on some of the compute nodes.<br /><br /><bk>Try the following  <i>#rocks sync host sharedkey compute</i>&nbsp;</bk><br /><br /><bk>Try <i>#rocks run host "/opt/rocks/bin/411get --all"</i>&nbsp;</bk><br /><br /><bk>if that works,&nbsp;</bk><br /><br /><bk>Try <i>#rocks sync users</i> on the frontend</bk><br /><br />This cured the password prompt problem on the cluster.

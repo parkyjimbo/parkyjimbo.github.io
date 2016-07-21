@@ -1,0 +1,12 @@
+---
+layout: post
+title: Wake on LAN
+date: '2010-06-16T16:21:00.003+01:00'
+author: jimbuzz
+tags: 
+modified_time: '2010-06-16T16:22:48.750+01:00'
+blogger_id: tag:blogger.com,1999:blog-4676883399643590331.post-1477096224064995196
+blogger_orig_url: http://parkyjimbo.blogspot.com/2010/06/wake-on-lan.html
+---
+
+<b>WakeonLAN</b><br /><br />I have been working with the wakeonlan command and it does not work with the command eg <i>wakeonlan 00:30:48:70:45:8c</i>.<br />I have however got it to work with <i>wakeonlan -i 192.168.1.255 00:30:48:70:45:8c</i> by<br />using the broadcast address for the private network the node is on. <br />I have tried it a good number of times and it is consistently switching on the compute-4 node.<br />I think the main problem was to do with the wakeonlan command not knowing where to send the magic packet either on the bridge network or the private network.

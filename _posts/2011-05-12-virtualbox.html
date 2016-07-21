@@ -1,0 +1,12 @@
+---
+layout: post
+title: VirtualBox
+date: '2011-05-12T12:17:00.000+01:00'
+author: jimbuzz
+tags: 
+modified_time: '2011-05-13T21:35:41.266+01:00'
+blogger_id: tag:blogger.com,1999:blog-4676883399643590331.post-4397039110994424592
+blogger_orig_url: http://parkyjimbo.blogspot.com/2011/05/virtualbox.html
+---
+
+<b>Create a VM</b><br />VBoxManage –help<br /><br /><br />VBoxManage createvm --name "MyvmServer" --register<br />VBoxManage modifyvm "MyvmServer" --memory 256 --acpi on --boot1 dvd --nic1 bridged --bridgeadapter1 eth0<br />VBoxManage createhd --filename MyvmServer.vdi --size 10000 --register<br />VBoxManage storagectl "MyvmServer" --name "IDE Controller" --add ide<br />VBoxManage storageattach "MyvmServer" --storagectl "IDE Controller" --port 0 --device 0 --type hdd --medium MyvmServer.vdi<br />VBoxManage storageattach "MyvmServer" --storagectl "IDE Controller" --port 1 --device 0 --type dvddrive --medium /home/MyvmServer.iso<br /><br /><br /><b>Start a VM with VboxHeadless</b><br />VBoxHeadless --startvm "MyvmServer"<br />VBoxManage controlvm "MyvmServer" poweroff<br />VBoxManage controlvm "MyvmServer" pause<br />VBoxManage controlvm "MyvmServer" reset <br />VBoxHeadless –help<br /><br /><b>Import an existing VM</b><br />VM with the name myvm that needs to be reused. A directory contains myvm in the VirtualBox directory. The myvm directory will contain the myvm.xml file. Copy the myvm directory (including the myvm.xml file) to the new Machines directory.<br />In addition copy the myvm.vdi file from the old VDI directory to the new one.<br />Register the imported VM:<br />VBoxManage registervm somedirectory/myvm/myvm.xml<br /><br /><a href="http://www.howtoforge.com/vboxheadless-running-virtual-machines-with-virtualbox-3.1.x-on-a-headless-fedora-12-server">Reference Page</a><br />The above link contains more info on VM's.

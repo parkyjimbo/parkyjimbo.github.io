@@ -1,0 +1,12 @@
+---
+layout: post
+title: MR3220 OpenWRT Extroot installation
+date: '2012-06-06T21:59:00.000+01:00'
+author: jimbuzz
+tags: 
+modified_time: '2012-06-07T10:52:50.419+01:00'
+blogger_id: tag:blogger.com,1999:blog-4676883399643590331.post-8688595426573979568
+blogger_orig_url: http://parkyjimbo.blogspot.com/2012/06/mr3220-openwrt-extroot-installation.html
+---
+
+<p> The TP-Link has OpenWRT installed using either tftp or via the serial port using Kermit. Install the packages for using USB as storage on OpenWRT.</p><i>opkg update</i><br><i>opkg install kmod-usb-core kmod-usb-uhci kmod-usb-storage  kmod-usb2  kmod-fs-ext4</i><br><i>reboot -f</i><br><i>mkdir /usb</i><br><i>mount /dev/sda1 /usb</i><br><i>mkdir /tmp/root</i><br><i>mount -o bind / /tmp/root</i><br><i>cp /tmp/root/* /usb -a</i><br><i>umount /tmp/root</i><br><i>umount /usb</i><br><br>Now edit the <i>/etc/config/fstab</i> file and add the following. <br><i>config mount</i><br><i>option target   /usb</i><br><i>option device   /dev/sda1</i><br><i>option fstype   ext2</i><br><i>option options  rw,sync</i><br><i>option enabled  1</i><br><i>option enabled_fsck 1</i><br><i>option is_rootfs 1</i>

@@ -1,0 +1,12 @@
+---
+layout: post
+title: Rocks Cluster NAT
+date: '2010-07-29T17:32:00.001+01:00'
+author: jimbuzz
+tags: 
+modified_time: '2010-07-29T17:32:58.597+01:00'
+blogger_id: tag:blogger.com,1999:blog-4676883399643590331.post-1164068268462192785
+blogger_orig_url: http://parkyjimbo.blogspot.com/2010/07/rocks-cluster-nat.html
+---
+
+The NAT was not enabled on the cluster to allow nodes access to the public network. This was achieved by editing the <i>/etc/sysconfig/iptables</i> with vim and adding the following lines:-<br /><br /><i>*nat<br />-A POSTROUTING -o eth1 -j MASQUERADE<br />COMMIT</i><br /><br />to the beginning of the file.<br /><br />Save the file using <i><escape> wq</i><br /><br />Then restart the service using:-<br /><br /><i>/sbin/service iptables restart</i><br /><br />Then sync the config using :-<br /><br /><i>rocks sync config</i><br /><br />That is now the NAT working and allowing internet access from the compute nodes on the private network.

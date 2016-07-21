@@ -1,0 +1,12 @@
+---
+layout: post
+title: Raspberry PI Kiosk
+date: '2013-04-04T15:25:00.000+01:00'
+author: jimbuzz
+tags: 
+modified_time: '2013-09-22T17:34:27.213+01:00'
+blogger_id: tag:blogger.com,1999:blog-4676883399643590331.post-3903532813036920711
+blogger_orig_url: http://parkyjimbo.blogspot.com/2013/04/raspberry-pi-kiosk.html
+---
+
+Do the usual things after installing an image on the SD card and booting the Pi <br />for the first time run<br /><i>sudo raspi-config</i><br />then set boot desktop in boot_behaviour <br /><br /><i>sudo apt-get install chromium x11-xserver-utils unclutter</i><br /><br />Edit <i>/etc/xdg/lxsession/LXDE/autostart</i> file and comment out screensaver line, add lines below<br /><pre style="font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; color: #000000; background-color: #eee;font-size: 12px;border: 1px dashed #999999;line-height: 14px;padding: 5px; overflow: auto; width: 100%"><code>@xset s off<br />@xset -dpms<br />@xset s noblank<br />@chromium --kiosk --incognito http://www.google.com # your URL here<br /></code></pre><br /><br /><br />

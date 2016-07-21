@@ -1,0 +1,12 @@
+---
+layout: post
+title: Using a clone image on new hardware.
+date: '2012-03-08T10:51:00.002Z'
+author: jimbuzz
+tags: 
+modified_time: '2012-03-08T16:39:33.664Z'
+blogger_id: tag:blogger.com,1999:blog-4676883399643590331.post-4538656417999447151
+blogger_orig_url: http://parkyjimbo.blogspot.com/2012/03/using-clone-image-on-new-hardware.html
+---
+
+<p>The Centos networking will not work after the new hardware is using a clone image. The problem occurs because the MAC addresses on the new hardware don't match the MAC addresses in the config files of the clone image, these are the MAC addresses of the original hardware the image was taken from.</p><p>To get Networking working on Centos when using a cloned image, just modify the entries in <i>/etc/sysconfig/network-scripts/ifcfg-eth0 ifcfg-eth1 and the /etc/udev/rules.d/70-persistent-net.rules</i> files so that the eth0 and eth1 entries match the new hardware MAC addresses.</p></p><p>Restart the networking using <i>service network restart</i> and networking should now be working.</p>
